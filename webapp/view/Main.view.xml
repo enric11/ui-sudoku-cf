@@ -1,0 +1,23 @@
+<mvc:View xmlns:f="sap.ui.layout.form" controllerName="ecastella.sudokuui.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
+		<content>
+
+            <Text id="textData" text="{path: '/getTodos()', type: 'sap.ui.model.odata.type.String'}"/>
+
+<f:Form id="getNextAvailableItem" binding="{/getTodos(...)}">
+<f:FormContainer>
+        <f:FormElement>
+          <f:label>
+            <Label text="Label"/>
+          </f:label>
+          <Input placeholder="Input"/>
+        </f:FormElement>
+        </f:FormContainer>
+</f:Form>
+
+			<Button text="{i18n>iWantToNavigate}" press="onGetNextAvailableItem"/>
+		</content>
+	</Page>
+</mvc:View>
