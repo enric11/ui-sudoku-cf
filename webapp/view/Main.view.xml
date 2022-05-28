@@ -4,9 +4,10 @@
 	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
 		<content>
 
-            <Text id="textData" text="{path: '/getTodos()', type: 'sap.ui.model.odata.type.String'}"/>
+             <Text id="textData" text="{path: '/getTodos()', type: 'sap.ui.model.odata.type.String'}"/> 
 
 <f:Form id="getNextAvailableItem" binding="{/getTodos(...)}">
+
 <f:FormContainer>
         <f:FormElement>
           <f:label>
