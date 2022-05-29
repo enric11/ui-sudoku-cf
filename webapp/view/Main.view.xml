@@ -19,6 +19,29 @@
 </f:Form>
 
 			<Button text="{i18n>iWantToNavigate}" press="onGetNextAvailableItem"/>
+
+    
+    <List headerText="Custom Content" mode="Delete" items="{path: 'sudoku>/board'}" >
+		<CustomListItem>
+			<HBox>
+                <Text text="{sudoku>0}"/>
+                <Text text="{sudoku>}"/>
+
+                <List headerText="Custom Content" mode="Delete" items="{path: 'sudoku>'}" >
+                    <CustomListItem>
+                        <HBox>
+                            <Text text="{sudoku>}"/>
+                        </HBox>
+                    </CustomListItem>
+                </List>
+
+			</HBox>
+		</CustomListItem>
+	</List>
+
+
+            <Text text="{sudoku>/board'}"/>
+
 		</content>
 	</Page>
 </mvc:View>
