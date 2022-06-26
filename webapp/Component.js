@@ -8,7 +8,8 @@ sap.ui.define([
 
         return UIComponent.extend("ecastella.sudokuui.Component", {
             metadata: {
-                manifest: "json"
+                manifest: "json",
+                includes: ["images/loading.gif"]
             },
 
             /**
@@ -25,6 +26,13 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+                
+                var busyImage = new sap.m.BusyIndicator({
+                    text:'this is an image busy indicator ...',
+                    customIcon: "images/loading.gif",
+                    customIconRotationSpeed: 0
+                });
+
             }
         });
     }

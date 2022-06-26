@@ -1,10 +1,12 @@
 <mvc:View xmlns:f="sap.ui.layout.form" controllerName="ecastella.sudokuui.controller.Main"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
     xmlns="sap.m">
 	<Page title="{i18n>homePageTitle}" class="sapUiResponsiveContentPadding">
 		<content>
 
-             <Text id="textData" text="{path: '/getTodos()', type: 'sap.ui.model.odata.type.String'}"/> 
+             <!-- <Text id="textData" text="{path: '/getTodos()', type: 'sap.ui.model.odata.type.String'}" binding="{/getTodos(...)}"/> -->
+
 
 <f:Form id="getNextAvailableItem" binding="{/getTodos(...)}">
 
@@ -18,29 +20,133 @@
         </f:FormContainer>
 </f:Form>
 
+<VBox>            
+    <HBox>            
+        <VBox>
+            <HBox>
+                <Text text="|{
+							path: 'sudoku_board>/board/0/0',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/0/1',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+            </HBox>
+            <HBox>
+                <Text text="|{
+							path: 'sudoku_board>/board/1/0',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/1/1',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+            </HBox>
+        </VBox>
+        <VBox>
+            <HBox>
+                <Text text="#"/>
+                <Text text="|{
+							path: 'sudoku_board>/board/0/2',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/0/3',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+            </HBox>
+            <HBox>
+                <Text text="#"/>
+                <Text text="|{
+							path: 'sudoku_board>/board/1/2',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/1/3',
+							formatter: '.formatter.inputCheckForm'
+						}|"/>
+            </HBox>
+        </VBox>
+    </HBox>
+    <Text text="--------------"/>
+    <HBox>            
+        <VBox>
+            <HBox>
+                <Text text="|{
+							path: 'sudoku_board>/board/2/0',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/2/1',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+            </HBox>
+            <HBox>
+                <Text text="|{
+							path: 'sudoku_board>/board/3/0',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/3/1',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+            </HBox>
+        </VBox>
+        <VBox>
+            <HBox>
+                <Text text="#"/>
+                <Text text="|{
+							path: 'sudoku_board>/board/2/2',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/2/3',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+            </HBox>
+            <HBox>
+                <Text text="#"/>
+                <Text text="|{
+							path: 'sudoku_board>/board/3/2',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+                <Text text="{
+							path: 'sudoku_board>/board/3/3',
+							formatter: '.formatter.inputCheckForm'
+				}|"/>
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>
+
 			<Button text="{i18n>iWantToNavigate}" press="onGetNextAvailableItem"/>
 
-    
-    <List headerText="Custom Content" mode="Delete" items="{path: 'sudoku>/board'}" >
-		<CustomListItem>
-			<HBox>
-                <Text text="{sudoku>0}"/>
-                <Text text="{sudoku>}"/>
 
-                <List headerText="Custom Content" mode="Delete" items="{path: 'sudoku>'}" >
+    <!--<List items="{path: 'sudoku>/board'}" >
+    <List items="{path: 'sudoku>/'}" >
+		<CustomListItem>
+
+                <Text text="{sudoku>0}"/>
+                <Text text="{sudoku>}"/> 
+
+                <List  items="{path: 'sudoku>'}" >
                     <CustomListItem>
-                        <HBox>
-                            <Text text="{sudoku>}"/>
-                        </HBox>
+                        <List  items="{path: 'sudoku>'}" >
+                            <CustomListItem>
+                                <HBox>
+                                    <Text text="{sudoku>}"/>
+                                </HBox>
+                            </CustomListItem>
+                        </List>
                     </CustomListItem>
                 </List>
 
-			</HBox>
 		</CustomListItem>
 	</List>
+-->
 
-
-            <Text text="{sudoku>/board'}"/>
+           <!-- <Text text="{sudoku>/board'}"/> -->
 
 		</content>
 	</Page>
